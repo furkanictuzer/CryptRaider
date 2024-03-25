@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "name": "CryptRaiderEditor Editor Win64 Development (CryptRaider)",
+            "compilerPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "msvc-x64",
+            "compileCommands": "D:\\UE5-Projects\\CryptRaider\\CryptRaider\\.vscode\\compileCommands_CryptRaider.json"
+        },
+        {
+            "name": "Win32",
+            "compilerPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "msvc-x64",
+            "compileCommands": "D:\\UE5-Projects\\CryptRaider\\CryptRaider\\.vscode\\compileCommands_Default.json",
+            "includePath": [
+                "${default}",
+                "C:/Program Files/Epic Games/UE_5.1/Engine/Source/Runtime/Engine/Classes",
+                "C:/Program Files/Epic Games/UE_5.1/Engine/Source/Runtime/Core/Public"
+            ]
+        }
+    ],
+    "version": 4
+}
