@@ -4,7 +4,7 @@
 		{
 			"name": "Launch CryptRaider (Debug)",
 			"request": "launch",
-			"program": "D:\\UE5-Projects\\CryptRaider\\CryptRaider\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+			"program": "C:\\UnrealEngine_Projects\\CryptRaider\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
 			"preLaunchTask": "CryptRaider Win64 Debug Build",
 			"args": [
 			],
@@ -20,7 +20,7 @@
 		{
 			"name": "Launch CryptRaider (DebugGame)",
 			"request": "launch",
-			"program": "D:\\UE5-Projects\\CryptRaider\\CryptRaider\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+			"program": "C:\\UnrealEngine_Projects\\CryptRaider\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
 			"preLaunchTask": "CryptRaider Win64 DebugGame Build",
 			"args": [
 			],
@@ -36,7 +36,7 @@
 		{
 			"name": "Launch CryptRaider (Development)",
 			"request": "launch",
-			"program": "D:\\UE5-Projects\\CryptRaider\\CryptRaider\\Binaries\\Win64\\UnrealGame.exe",
+			"program": "C:\\UnrealEngine_Projects\\CryptRaider\\Binaries\\Win64\\UnrealGame.exe",
 			"preLaunchTask": "CryptRaider Win64 Development Build",
 			"args": [
 			],
@@ -52,7 +52,7 @@
 		{
 			"name": "Launch CryptRaider (Test)",
 			"request": "launch",
-			"program": "D:\\UE5-Projects\\CryptRaider\\CryptRaider\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+			"program": "C:\\UnrealEngine_Projects\\CryptRaider\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
 			"preLaunchTask": "CryptRaider Win64 Test Build",
 			"args": [
 			],
@@ -68,7 +68,7 @@
 		{
 			"name": "Launch CryptRaider (Shipping)",
 			"request": "launch",
-			"program": "D:\\UE5-Projects\\CryptRaider\\CryptRaider\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+			"program": "C:\\UnrealEngine_Projects\\CryptRaider\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
 			"preLaunchTask": "CryptRaider Win64 Shipping Build",
 			"args": [
 			],
@@ -87,7 +87,7 @@
 			"program": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
 			"preLaunchTask": "CryptRaiderEditor Win64 Debug Build",
 			"args": [
-				"D:\\UE5-Projects\\CryptRaider\\CryptRaider\\CryptRaider.uproject"
+				"C:\\UnrealEngine_Projects\\CryptRaider\\CryptRaider.uproject"
 			],
 			"cwd": "C:\\Program Files\\Epic Games\\UE_5.1",
 			"stopAtEntry": false,
@@ -104,7 +104,7 @@
 			"program": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
 			"preLaunchTask": "CryptRaiderEditor Win64 DebugGame Build",
 			"args": [
-				"D:\\UE5-Projects\\CryptRaider\\CryptRaider\\CryptRaider.uproject"
+				"C:\\UnrealEngine_Projects\\CryptRaider\\CryptRaider.uproject"
 			],
 			"cwd": "C:\\Program Files\\Epic Games\\UE_5.1",
 			"stopAtEntry": false,
@@ -121,7 +121,7 @@
 			"program": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
 			"preLaunchTask": "CryptRaiderEditor Win64 Development Build",
 			"args": [
-				"D:\\UE5-Projects\\CryptRaider\\CryptRaider\\CryptRaider.uproject"
+				"C:\\UnrealEngine_Projects\\CryptRaider\\CryptRaider.uproject"
 			],
 			"cwd": "C:\\Program Files\\Epic Games\\UE_5.1",
 			"stopAtEntry": false,
@@ -140,7 +140,7 @@
 			"args": [
 				"-projectfiles",
 				"-vscode",
-				"-project=D:\\UE5-Projects\\CryptRaider\\CryptRaider\\CryptRaider.uproject",
+				"-project=C:\\UnrealEngine_Projects\\CryptRaider\\CryptRaider.uproject",
 				"-game",
 				"-engine"
 			],
