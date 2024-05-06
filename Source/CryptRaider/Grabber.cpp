@@ -30,32 +30,40 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 	
-	CastSphereForGrabber(GetWorld());
+	//Grab();
 	// ...
 }
 
-void UGrabber::CastSphereForGrabber(UWorld* World) const
+void UGrabber::Release()
 {
+	UE_LOG(LogTemp, Display, TEXT("Release"));
+}
+
+void UGrabber::Grab()
+{
+	UWorld* World=GetWorld();
+	
 	FHitResult OutHit;
 	FCollisionShape Sphere = FCollisionShape::MakeSphere(GrabRadius);
 	
 	FVector Start = GetComponentLocation();
 	FVector End = Start + GetForwardVector() + Start;
 
-	bool IsHit= World->SweepSingleByChannel(
+	if (bool IsHit= World->SweepSingleByChannel(
 		OutHit,
 		Start,
 		End,
 		FQuat::Identity,
 		ECC_GameTraceChannel2,
 		Sphere
-		);
-	
-	if (IsHit)
+	))
 	{
 		FString Name = OutHit.GetActor()->GetName();
 		UE_LOG(LogTemp, Display, TEXT("Hit actor: %s"), *Name);
-		
+	}
+	else
+	{
+		UE_LOG(LogTemp, Display, TEXT("No hit."));
 	}
 }
 
