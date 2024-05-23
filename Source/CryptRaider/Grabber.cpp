@@ -19,9 +19,6 @@ UGrabber::UGrabber()
 void UGrabber::BeginPlay()
 {
 	Super::BeginPlay();
-
-	// ...
-	
 }
 
 
@@ -29,9 +26,17 @@ void UGrabber::BeginPlay()
 void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+
+	UPhysicsHandleComponent* PhysicsHandle = GetPhysicsHandle();
 	
-	//Grab();
-	// ...
+	if (PhysicsHandle == nullptr)
+	{
+		return;
+	}
+
+	FVector TargetLocation = GetComponentLocation() + GetForwardVector() * HoldDistance;
+
+	PhysicsHandle->SetTargetLocationAndRotation(TargetLocation, GetComponentRotation());
 }
 
 void UGrabber::Release()
@@ -41,16 +46,26 @@ void UGrabber::Release()
 
 void UGrabber::Grab()
 {
-	UWorld* World=GetWorld();
+	UPhysicsHandleComponent* PhysicsHandle = GetPhysicsHandle();
 	
-	FHitResult OutHit;
+	if (PhysicsHandle == nullptr)
+	{
+		return;
+	}
+	
+	UWorld* World = GetWorld();
+	
+	FHitResult HitResult;
 	FCollisionShape Sphere = FCollisionShape::MakeSphere(GrabRadius);
 	
 	FVector Start = GetComponentLocation();
-	FVector End = Start + GetForwardVector() + Start;
+	FVector End = Start + GetForwardVector() * MaxGrabDistance;
+
+	DrawDebugLine(World, Start, End, FColor::Red);
+	DrawDebugSphere(World, End, 10,10 , FColor::Blue, false, 5);
 
 	if (bool IsHit= World->SweepSingleByChannel(
-		OutHit,
+		HitResult,
 		Start,
 		End,
 		FQuat::Identity,
@@ -58,13 +73,27 @@ void UGrabber::Grab()
 		Sphere
 	))
 	{
-		FString Name = OutHit.GetActor()->GetName();
-		UE_LOG(LogTemp, Display, TEXT("Hit actor: %s"), *Name);
+		//UPrimitiveComponent* PrimitiveComponent = HitResult.GetComponent();
+		
+		PhysicsHandle->GrabComponentAtLocationWithRotation(
+			HitResult.GetComponent(),
+			NAME_None,
+			HitResult.ImpactPoint,
+			GetComponentRotation()
+			);
 	}
-	else
+}
+
+UPhysicsHandleComponent* UGrabber::GetPhysicsHandle() const
+{
+	UPhysicsHandleComponent* result = GetOwner()->FindComponentByClass<UPhysicsHandleComponent>();
+	
+	if (result == nullptr)
 	{
-		UE_LOG(LogTemp, Display, TEXT("No hit."));
+		UE_LOG(LogTemp, Error, TEXT("Grabber requires UPhysicsHandleComponent"));
 	}
+	
+	return result;
 }
 
 
